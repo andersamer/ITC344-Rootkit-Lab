@@ -18,7 +18,7 @@ Make sure to read [the Xcellerator's first blog post](https://xcellerator.github
 
 For part 1, we are keeping it simple. **Your main task is to build a rootkit that logs "Hello World!" to the the kernel logs.**
 
-[The Xcellerator's first blog post](https://xcellerator.github.io/posts/linux_rootkits_01/#what-is-a-kernel-mode-rootkit) will walk you through how to write the kernel module, how to compile it, how to add the kernel module using `insmod`, and how to check the kernel logs using `dmesg`.
+[The Xcellerator's first blog post](https://xcellerator.github.io/posts/linux_rootkits_01/#what-is-a-kernel-mode-rootkit) will walk you through how to write the kernel module, how to compile it, how to add the kernel module using `insmod`, and how to check the kernel logs using `dmesg`. C
 
 Remember, ***you should only add your kernel modules to your VM's kernel. Doing this on your own machine can seriuosly mess up your system.***
 
@@ -28,8 +28,7 @@ In [the Xcellerator's first article](https://xcellerator.github.io/posts/linux_r
 
 > "Essentially, we take a function in memory that performs some action we want to influence (listing directory contents, sending a signal to a process, etc) and write our own version."
 
-That is the main objective of part 2. Using the code provided to you in the git repository, **your task is to build a rootkit that will hide directories that contain a certin keyword.**
+That is the main objective of part 2. Using the code provided to you in the git repository, **your task is to build a rootkit that will hide directories that contain a certian keyword.**
 
 # Multi Rootkit
 
-## This is part of a test commit from Mckay
