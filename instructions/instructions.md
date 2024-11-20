@@ -24,9 +24,9 @@ The Xcellerator's first blog post will walk you through the code of the kernel, 
 
 For part 1, you will need to:
 
-1. Copy the code for the "Hello World!" Kernel module.
+1. Copy the code for the "Hello World!" kernel module.
 
-2. Modify the code so that something other than `"Hello World!" is displayed.
+2. Modify the code so that something other than `"Hello World!" is displayed in the kernel logs.
 
 3. Create a `Makefile` to compile the code into a kernel object file (`.ko`).
 
@@ -40,7 +40,7 @@ For part 1, you will need to:
 
 7. Profit.
 
-Once you finish this part of the lab, take a screenshot of the `"Hello World!"` log statement
+Once you finish this part of the lab, take a screenshot of the `"Hello World!"` log statement to include in your writeup.
 
 # Part 2: Directory Hiding Rootkit
 
@@ -48,11 +48,21 @@ In [the Xcellerator's first article](https://xcellerator.github.io/posts/linux_r
 
 > "Essentially, we take a function in memory that performs some action we want to influence (listing directory contents, sending a signal to a process, etc) and write our own version."
 
-Luckily, the Xcellerator has provided a useful file called `ftrace_helper.c`.
+That is the main objective of part 2. Using the code provided to you in the git repository, **your task is to build a rootkit that will hide directories whose named begins with a certian keyword.** The code for this module, its Makefile, and other useful information can all be found in [this Github repository](https://github.com/xcellerator/linux_kernel_hacking/tree/master/3_RootkitTechniques/3.4_hiding_directories).
 
-That is the main objective of part 2. Using the code provided to you in the git repository, **your task is to build a rootkit that will hide directories that contain a certian keyword.**
+For part 2, you will need to:
 
+1. Copy the [code](https://github.com/xcellerator/linux_kernel_hacking/blob/master/3_RootkitTechniques/3.4_hiding_directories/rootkit.c) for the directory hiding kernel module.
 
+2. Modify the code to use a key word of your choice. (**Hint:** look for the `PREFIX` macro!)
+
+3. Compile the code using the [Makefile](https://github.com/xcellerator/linux_kernel_hacking/blob/master/3_RootkitTechniques/3.4_hiding_directories/Makefile) provided in the Xcellerator's Github repo.
+
+4.Insert the kernel module using `insmod`.
+
+5. Create some directories whose names match your keyword. Try using `ls` to list them. Do they show up?
+
+Once you get your rootkit working, take screenshots of your demo for your writeup.
 
 # Multi Rootkit
 
