@@ -4,7 +4,7 @@ Welcome to the rootkit lab! Rootkits are a powerful hacking tool that grants att
 
 Essentially, rootkits are pieces of code that are usually designed to give hackers instant root access to a system.In this lab, we are going to be focusing on Linux rootkits that use *kernel modules* to run arbitrary code on the kernel.
 
-This lab was based heavily off of TheXcellerator's two rootkit-centered blog posts. While they do things a little bit differently than us. **Make sure you read through these posts and reference back to them when you get stuck. They are a great source of information and will help you solve many of your problems.**
+This lab was based heavily off of TheXcellerator's two rootkit-centered blog posts, though they do things a little bit differently than us. **Make sure you read through these posts and reference back to them when you get stuck. They are a great source of information and will help you solve many of your problems.**
 
 - [Linux Rootkits Part 1: Introduction and Workflow](https://xcellerator.github.io/posts/linux_rootkits_01/)
 
@@ -32,7 +32,7 @@ For part 1, you will need to:
 
 4. Compile the code.
 
-5. Insert your module to the kernel using `insmod`.
+5. Insert your module to the kernel using `insmod [filename].ko`.
 
 6. Check the syslogs using `dmesg` to verify that your custom message was printed to the logs.
 
