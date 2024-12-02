@@ -14,6 +14,32 @@ And one ***IMPORTANT*** warning (especially for Linux users!): ***You should onl
 
 With that out of the way, let's get started!
 
+# Part 0: Setting up the VM.
+
+Due to kernels being more secure and using different processes now, these rootkits need to be set up in an older enviroment. We will be using Ubuntu 20.04 as our testing enviroment. 
+
+### Downloading the right image
+
+Using your Proxmox enviroment and the knowledge you gained on how to create a new VM, create a new VM using Ubuntu 20.04 as the operating system.
+
+Here is a download link for the .iso
+
+https://releases.ubuntu.com/focal/ubuntu-20.04.6-desktop-amd64.iso
+
+Set up this VM as normal, giving it the recommended amount of RAM and storage. 
+
+### Downloading the right dependencies
+
+Once you have your VM installed, we need to download some packages to our machine so we can write our rootkits. 
+
+Open up a shell and run this command:
+
+```
+sudo apt update; apt install git build-essential linux-headers-$(uname -r)
+```
+
+This will download the correct packages so that the C code we will be using to make our rootkits can work.
+
 # Part 1: "Hello-World!" Rootkit
 
 Make sure to read [the Xcellerator's first blog post](https://xcellerator.github.io/posts/linux_rootkits_01/) before beginning this part of the lab.
