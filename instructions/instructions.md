@@ -35,14 +35,16 @@ Once you have your VM installed, we need to download some packages to our machin
 Open up a shell and run this command:
 
 ```
-sudo apt update; apt install git build-essential linux-headers-$(uname -r)
+sudo apt update; sudo apt install git build-essential linux-headers-$(uname -r)
 ```
 
 This will download the correct packages so that the C code we will be using to make our rootkits can work.
 
 # Part 1: "Hello-World!" Rootkit
 
-Make sure to read [the Xcellerator's first blog post](https://xcellerator.github.io/posts/linux_rootkits_01/) before beginning this part of the lab.
+Make sure to read [the Xcellerator's first blog post](https://xcellerator.github.io/posts/linux_rootkits_01/) before beginning this part of the lab. Some of the set up will be repeated, so just double check you have everything correct and you're good to go!
+
+You read it? Great! Lets get going!
 
 For part 1, we are keeping it simple. **Your task is to compile a rootkit that logs a message of your choosing to the the kernel logs.**
 
