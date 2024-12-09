@@ -64,6 +64,10 @@ For part 1, you will need to:
 
 6. Check the syslogs using `dmesg` to verify that your custom message was printed to the logs.
 
+7. ???
+
+8. Profit
+
 Once you finish this part of the lab, take a screenshot of the `"Hello World!"` log statement to include in your writeup.
 
 # Part 2: Directory Hiding Rootkit
