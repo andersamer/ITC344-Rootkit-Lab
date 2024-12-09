@@ -135,5 +135,5 @@ Congratulations! You are root!
 
 # Deliverables
 - Screenshot of "Hello-world" message
-- Screenshot of directories before and after hiding
+- Screenshots of directories before and after hiding
 - Screenshot of `id` command to show you are root
