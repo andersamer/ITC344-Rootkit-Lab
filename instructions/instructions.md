@@ -133,4 +133,7 @@ void set_root(void)
 
 Congratulations! You are root! 
 
-# Multi Rootkit
+# Deliverables
+- Screenshot of "Hello-world" message
+- Screenshot of directories before and after hiding
+- Screenshot of `id` command to show you are root
